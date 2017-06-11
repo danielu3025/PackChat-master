@@ -7,6 +7,8 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -31,16 +33,18 @@ public class Messeges extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_messeges);
+        Button currButton = (Button) findViewById(R.id.chatsBt);
+        currButton.setBackgroundResource(R.drawable.chatselected);
         listView = (ListView) findViewById(R.id.list);
         fab = (FloatingActionButton) findViewById(R.id.fab);
         input = (EditText) findViewById(R.id.input);
+        EditText name = (EditText)findViewById(R.id.groupName);
         Intent intent = getIntent();
+        name.setText(intent.getStringExtra("groupId"));
         dbRef = database.getReference().child("Courses");
         String groupId = intent.getStringExtra("groupId");
         dbRef = dbRef.child(groupId);
-
-
-
+        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
         adapter = new MessageAdapter(this, ChatMessage.class, R.layout.item_in_message,dbRef.getRef());
         listView.setAdapter(adapter);

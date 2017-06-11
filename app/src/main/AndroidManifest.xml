@@ -8,7 +8,9 @@
         android:label="PackChat"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AuthenActivity">
+        <activity
+            android:name=".AuthenActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,11 +20,13 @@
         <activity
             android:name=".Messeges"
             android:label="PackChat"
-             />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".GroupsActivity"
             android:label="PackChat"
-             />
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity android:name=".settingsActivity"></activity>
     </application>
 
 </manifest>

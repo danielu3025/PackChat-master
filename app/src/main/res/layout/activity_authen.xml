@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="shenkar.koruApps.PackChetApp.AuthenActivity">
+    android:background="@drawable/walpaper">
+
 
 </android.support.constraint.ConstraintLayout>
