@@ -13,6 +13,7 @@ import com.google.firebase.database.DatabaseReference;
 public class MessageAdapter extends FirebaseListAdapter<ChatMessage> {
 
     private Messeges activity2;
+    private ChatFragment cf;
 
     public MessageAdapter (Messeges activity2, Class<ChatMessage> modelClass, int modelLayout, DatabaseReference ref) {
         super(activity2, modelClass, modelLayout, ref);
